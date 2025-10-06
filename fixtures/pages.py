@@ -6,6 +6,7 @@ from pages.login_page import LoginPage
 from pages.registration_page import RegistrationPage
 from pages.dashboard_page import DashboardPage
 from pages.create_course_page import CreateCoursePage
+from components.charts.chart_view_component import ChartViewComponent
 
 @pytest.fixture
 def login_page(chromium_page: Page) -> LoginPage:
@@ -30,3 +31,31 @@ def courses_list_page(chromium_page_with_state: Page) -> CoursesListPage:
 @pytest.fixture
 def create_course_page(chromium_page_with_state: Page) -> CreateCoursePage:
     return CreateCoursePage(page=chromium_page_with_state)
+
+@pytest.fixture
+def login_form_component(login_page: LoginPage):
+    return login_page.login_form
+
+@pytest.fixture
+def registration_form_component(registration_page: RegistrationPage):
+    return registration_page.registration_form
+
+@pytest.fixture
+def dashboard_toolbar_view_component(dashboard_page: DashboardPage):
+    return dashboard_page.dashboard_title
+
+@pytest.fixture
+def students_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
+    return dashboard_page.students_chart_view
+
+@pytest.fixture
+def activities_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
+    return dashboard_page.activities_chart_view
+
+@pytest.fixture
+def courses_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
+    return dashboard_page.courses_chart_view
+
+@pytest.fixture
+def scores_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
+    return dashboard_page.scores_chart_view
