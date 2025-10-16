@@ -16,6 +16,6 @@ def test_successful_registration(
     dashboard_toolbar_view_component: DashboardToolbarViewComponent
 ):
         registration_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
-        registration_form_component.fill_registration_form(email="user.name@gmail.com",username="username",password="password")
+        registration_form_component.fill(email="user.name@gmail.com",username="username",password="password")
         registration_page.click_registration_button()
         dashboard_page.dashboard_title.check_visible()

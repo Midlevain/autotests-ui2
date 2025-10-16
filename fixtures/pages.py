@@ -46,16 +46,16 @@ def dashboard_toolbar_view_component(dashboard_page: DashboardPage):
 
 @pytest.fixture
 def students_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
-    return dashboard_page.students_chart_view
+    return dashboard_page.students_chart
 
 @pytest.fixture
 def activities_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
-    return dashboard_page.activities_chart_view
+    return dashboard_page.activities_chart
 
 @pytest.fixture
 def courses_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
-    return dashboard_page.courses_chart_view
+    return dashboard_page.courses_chart
 
 @pytest.fixture
 def scores_chart_component(dashboard_page: DashboardPage) -> ChartViewComponent:
-    return dashboard_page.scores_chart_view
+    return dashboard_page.scores_chart
